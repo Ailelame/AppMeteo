@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { MeteoPage } from '../meteo/meteo';
 
 @Component({
   selector: 'page-home',
@@ -11,4 +12,15 @@ export class HomePage {
 
   }
 
+  unInput : any;
+
+
+  changerDePage(){
+  	this.navCtrl.push(MeteoPage, {
+  		data : this.unInput
+  	});
+  }
+
+  
+  
 }

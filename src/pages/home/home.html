@@ -1,14 +1,45 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
+  <ion-navbar color="bleu">
+    <ion-title text-center >
+      Mon app météo
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+	<h5>Veuillez sélectionner votre ville</h5>
+	<ion-item>
+		<ion-label floating>Ville</ion-label>
+		<ion-input  ion-input type=" text"  [(ngModel)]="unInput"></ion-input>
+	</ion-item>
+
+	<div class="row">
+		<div class="col">
+			<button ion-button large full color="gris"> No recherche</button>
+		</div>
+		<div class="col">
+			<button ion-button large full color="bleu"> Recherche</button>
+		</div>
+	</div>
+  
 </ion-content>
+<ion-footer>
+
+
+	<ion-toolbar>
+		<div class="row">
+			<div class="col " >
+				<button ion-button  margin round outline  color="gris" >
+
+					<ion-icon class="boutonFooter" name="home"></ion-icon>
+				</button>
+				</div>
+				<div class="col" >
+				<button ion-button margin float-right round outline  color="gris" (click)="changerDePage()" color="gris">
+					<ion-icon class="boutonFooter"  name="cloudy" ></ion-icon>
+				</button>
+			</div>
+		</div>
+	</ion-toolbar>	
+
+</ion-footer>
