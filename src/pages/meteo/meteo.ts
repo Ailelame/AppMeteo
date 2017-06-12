@@ -23,7 +23,6 @@ export class MeteoPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public meteoApi : MeteoApi) {
   
 	this.meteoApi.getMeteo();
-	//this.meteoApi.getResult();
 	}
 
 
