@@ -10,19 +10,16 @@ import { MeteoPage } from '../pages/meteo/meteo';
 
 import { HttpModule } from '@angular/http';
 import { MeteoApi } from '../services/meteoapi.service';
-import { JsonObjectToArray } from '../pipe/jsonObjToArr';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    MeteoPage,
-    JsonObjectToArray
+    MeteoPage
   ],
   imports: [
     BrowserModule,
     HttpModule,
-
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],

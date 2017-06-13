@@ -17,24 +17,30 @@
 </div>
 
 
+<div *ngIf="meteoApi.result">
+	  	<ion-card *ngFor="let meteo  of meteoApi.forecastMeteo">
+		   
+
+		  <ion-card-content>
+		        
+		    <div class="row">
+		    	<div class="col centreTitre">      
+		    		{{meteo.day_long}}
+		    	</div>
+		    	<div class="col">   
+		    		<img class="image" src={{meteo.icon}}>
+		    	</div>
+		    	<div class="col" text-right>
+		    		<p class="smallerTxt">La température min est : {{meteo.tmin}}</p>
+		    		<p class="smallerTxt">La température max est : {{meteo.tmax}}</p> 
+		    	</div>
+		    </div>
+
+		  </ion-card-content>
+		</ion-card>
 	
-  	<ion-card *ngFor="let meteo  of meteoApi.forecastMeteo">
-	   
-
-	  <ion-card-content>
-	    <ion-card-title> <img src={{meteo.icon}} style="height:100px; width:100px">      </ion-card-title>
-	    <div class="row">
-	    	<div class="col">      {{meteo.condition}}</div>
-	    	<div class="col" text-right> <p>La température min est : {{meteo.tmin}}</p>
-	    <p>La température max est : {{meteo.tmax}}</p></div>
-	    </div>
-
-	  </ion-card-content>
-	</ion-card>
- 
+</div>	
 </ion-content>
-
-
 <ion-footer>
 
 

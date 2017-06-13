@@ -12,12 +12,16 @@ export class HomePage {
 
   }
 
-  unInput : any;
+  unInput : any = 'Charleville';
 
 
   changerDePage(){
+     let ville = this.unInput.charAt(0).toUpperCase()+ this.unInput.slice(1);
+     console.log(ville)
+
   	this.navCtrl.push(MeteoPage, {
-  		data : this.unInput
+
+  		data : ville
   	});
   }
 

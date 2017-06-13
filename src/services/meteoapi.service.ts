@@ -2,15 +2,12 @@
 import { Injectable }   from '@angular/core';
 import { Http }         from '@angular/http';
 
-import { MeteoApiGlobal } from '../models/meteoApi-global.model';
 
-// Models
-// Importez vos models ici
 
 @Injectable()
 export class MeteoApi {
 
-    public baseUrl: string = 'http://www.prevision-meteo.ch/services/json/lille';
+    public baseUrl: string = 'http://www.prevision-meteo.ch/services/json/';
     public result : string;
     public meteoAll : any;
     public objectMeteo : Object;
@@ -27,8 +24,8 @@ export class MeteoApi {
 
     constructor(public http: Http) { }
 
-    public getMeteo() {
-    	
+    public getMeteo(ville) {
+    	this.baseUrl=this.baseUrl+ville
 
     	this.http.get(this.baseUrl).
 	      map(res => res.json()).
