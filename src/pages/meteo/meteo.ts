@@ -17,6 +17,7 @@ export class MeteoPage {
 	ville;
   
   	constructor(public navCtrl: NavController, public navParams: NavParams, public meteoApi : MeteoApi) {
+  		this.ville=''
   		this.ville=this.navParams.get('data')
 		this.meteoApi.getMeteo(this.ville);
 	

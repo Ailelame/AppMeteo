@@ -25,12 +25,14 @@ export class MeteoApi {
     constructor(public http: Http) { }
 
     public getMeteo(ville) {
+        this.baseUrl='http://www.prevision-meteo.ch/services/json/'
     	this.baseUrl=this.baseUrl+ville
-
+        this.initObjects()
+        console.log(ville)
     	this.http.get(this.baseUrl).
 	      map(res => res.json()).
-	      subscribe(data=>{    	 
-	      	this.result=JSON.stringify(data);
+	      subscribe(data=>{    	
+ 	      	this.result=JSON.stringify(data);
 			this.objectMeteo = JSON.parse(this.result);
 			this.city_info =this.objectMeteo['city_info']
 			this.current_condition =this.objectMeteo['current_condition']
@@ -76,6 +78,19 @@ export class MeteoApi {
             console.log('l\'objet forecast j+2 =>', this.objectMeteo['fcst_day_2'])
             console.log('l\'objet forecast j+3 =>', this.objectMeteo['fcst_day_3'])
             console.log('l\'objet forecast j+4 =>', this.objectMeteo['fcst_day_4'])
+    }
+
+    initObjects(){
+        this.objectMeteo=[]
+        this.city_info=[]
+        this.current_condition=[]
+        this.j0=[]
+        this.j1=[]
+        this.j2=[]
+        this.j3=[]
+        this.j4=[]
+        this.forecastMeteo=[]
+
     }
 
 
