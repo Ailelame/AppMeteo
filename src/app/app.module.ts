@@ -11,6 +11,9 @@ import { MeteoPage } from '../pages/meteo/meteo';
 import { HttpModule } from '@angular/http';
 import { MeteoApi } from '../services/meteoapi.service';
 
+//Geolocation
+import { Geolocation } from '@ionic-native/geolocation';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -32,6 +35,7 @@ import { MeteoApi } from '../services/meteoapi.service';
     StatusBar,
     SplashScreen,
     MeteoApi,
+    Geolocation,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
