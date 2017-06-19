@@ -13,12 +13,16 @@
 		<ion-input  ion-input type=" text"  [(ngModel)]="unInput"></ion-input>
 	</ion-item>
 
-	<div class="row">
-		<div class="col">
-			<button ion-button large full color="gris" (tap)="getGeoloc()" > Geoloc</button>
+	<div class="row" text-center>
+		<div class="col margTop">
+			<button ion-button icon-only class="boutRond" round outline color="secondary" large (tap)="getGeoloc()" >
+			 	<ion-icon name="pin"></ion-icon>  
+			</button>
 		</div>
-		<div class="col">
-			<button ion-button large full color="bleu" (click)="changerDePage()"> Recherche</button>
+		<div class="col margTop">
+			<button ion-button icon-only class="boutRond" round outline color="secondary" large (tap)="changerDePage()" >
+			 	<ion-icon name="search"></ion-icon>  
+			</button>
 		</div>
 	</div>
   

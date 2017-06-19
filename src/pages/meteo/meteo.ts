@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { Http } from '@angular/http';
-import 'rxjs/add/operator/map';
-
 import { MeteoApi } from '../../services/meteoapi.service';
 
 
@@ -18,6 +15,9 @@ export class MeteoPage {
   	type;
   	latitude;
   	longitude;
+    cityinfos:any[];
+    forecast:any[];
+
 
 
   	constructor(public navCtrl: NavController, public navParams: NavParams, public meteoApi : MeteoApi) {
@@ -30,8 +30,8 @@ export class MeteoPage {
   		this.type=this.navParams.get('type')
 
   		if(this.type=='nom'){
-			this.ville=this.navParams.get('data')
-			this.meteoApi.getMeteoVille(this.ville);
+  			this.ville=this.navParams.get('data')
+  			this.meteoApi.getMeteoVille(this.ville);
   		}
 
   		if(this.type=='coord'){
@@ -43,7 +43,7 @@ export class MeteoPage {
   			this.meteoApi.getMeteoCoords(this.latitude,this.longitude)
 
   		}
-	
+     
 	}
 
 }
