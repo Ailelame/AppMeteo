@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { MeteoApi } from '../../services/meteoapi.service';
 
+//Page
+import { FocusPage } from '../focus/focus';
 
 @Component({
   selector: 'page-meteo',
@@ -43,8 +45,18 @@ export class MeteoPage {
   			this.meteoApi.getMeteoCoords(this.latitude,this.longitude)
 
   		}
+
+
      
 	}
+
+      goFucus(meteo,jour){
+          console.log("l'id du jour est : "+meteo)
+          this.navCtrl.push(FocusPage,{
+            met : meteo,
+            day : jour
+          })
+      }
 
 }
  

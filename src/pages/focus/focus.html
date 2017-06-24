@@ -1,0 +1,42 @@
+
+<ion-header>
+
+  <ion-navbar color="jaune">
+    <ion-title>{{jour}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+	
+	<div *ngIf="meteo">		
+		
+		<ion-card *ngFor="let mete  of hourly; let i = index "  >
+		    <ion-card-content>
+		        
+			    <div class="row">
+			    	<div class="col">
+			    		{{mete.heure}}
+			    	</div>		
+
+			    	<div class="col centreTitre" text-center>      
+			    		<p>{{mete.CONDITION}}</p>
+			    		<p> Température : {{mete.TMP2m}}°C </p>
+
+			    	</div>
+			    	<div class="col">   
+			    		<img class="image" src={{mete.ICON}} />
+			    	</div>
+			    	
+			    </div>
+		  	</ion-card-content>
+		</ion-card>    
+			
+	</div>       
+
+
+	
+
+</ion-content>

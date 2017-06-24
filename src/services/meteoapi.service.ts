@@ -2,7 +2,7 @@
 import { Injectable }   from '@angular/core';
 import { Http }         from '@angular/http';
 import 'rxjs/add/operator/map'
-
+import { LoadingController } from 'ionic-angular/index';
 
 @Injectable()
 export class MeteoApi {
@@ -24,9 +24,17 @@ export class MeteoApi {
     public verif : boolean = false;
 
 
-    constructor(public http: Http) { }
+    constructor(public http: Http, public loadingCtrl : LoadingController) { }
 
     public getMeteoVille(ville) {
+
+       let loading = this.loadingCtrl.create({
+          spinner : 'bubbles',
+          content: 'Chargement en cours...'
+        });
+
+      loading.present();
+
       this.baseUrl='http://www.prevision-meteo.ch/services/json/'
     	this.baseUrl=this.baseUrl+ville
       this.initObjects()
@@ -50,11 +58,20 @@ export class MeteoApi {
     			if(this.city_info!=undefined){
               this.verif=true
           }
+          loading.dismiss();
 
 	    });
     }
 
       public getMeteoCoords(lat,long) {
+        let loading = this.loadingCtrl.create({
+          spinner : 'bubbles',
+          content: 'Chargement en cours...'
+        });
+
+        loading.present();
+
+
         //transformation de la lat long en variable à 3 décimales
           let indexLat = lat.indexOf('.')
           indexLat = indexLat+4
@@ -91,7 +108,7 @@ export class MeteoApi {
             if(this.city_info!=undefined){
               this.verif=true
             }
-
+            loading.dismiss();
 
         });
     }

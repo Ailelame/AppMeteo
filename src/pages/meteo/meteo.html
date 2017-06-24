@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar color="bleu">
+  <ion-navbar color="jaune">
     <ion-title text-center >
       Mon app météo
     </ion-title>
@@ -19,7 +19,7 @@
 
 
 	<div *ngIf="meteoApi.result && meteoApi.result!==undefined">
-		  	<ion-card *ngFor="let meteo  of meteoApi.forecastMeteo">
+		  	<ion-card *ngFor="let meteo  of meteoApi.forecastMeteo; let i = index " (tap)="goFucus(meteo, meteo.day_long)" >
 			    <ion-card-content>
 			        
 				    <div class="row">
@@ -48,7 +48,7 @@
 
 </ion-content>
 
-
+<!--
 <ion-footer>
 
 
@@ -68,4 +68,4 @@
 		</div>
 	</ion-toolbar>	
 
-</ion-footer>
+</ion-footer> -->

@@ -7,6 +7,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { MeteoPage } from '../pages/meteo/meteo';
+import { FocusPage } from '../pages/focus/focus'
 
 import { HttpModule } from '@angular/http';
 import { MeteoApi } from '../services/meteoapi.service';
@@ -18,7 +19,8 @@ import { Geolocation } from '@ionic-native/geolocation';
   declarations: [
     MyApp,
     HomePage,
-    MeteoPage
+    MeteoPage,
+    FocusPage
   ],
   imports: [
     BrowserModule,
@@ -29,7 +31,8 @@ import { Geolocation } from '@ionic-native/geolocation';
   entryComponents: [
     MyApp,
     HomePage,
-    MeteoPage
+    MeteoPage,
+    FocusPage
   ],
   providers: [
     StatusBar,

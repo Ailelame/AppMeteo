@@ -1,49 +1,50 @@
 <ion-header>
-  <ion-navbar color="bleu">
+  <ion-navbar color="jaune">
     <ion-title text-center >
-      Mon app météo
+      Ma météo
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-	<h5>Veuillez sélectionner votre ville</h5>
+<ion-content padding text-center>
+	<h5 id="letitre">Veuillez sélectionner votre ville</h5>
 	<ion-item>
 		<ion-label floating>Ville</ion-label>
 		<ion-input  ion-input type=" text"  [(ngModel)]="unInput"></ion-input>
 	</ion-item>
 
-	<div class="row" text-center>
-		<div class="col margTop">
-			<button ion-button icon-only class="boutRond" round outline color="secondary" large (tap)="getGeoloc()" >
+	<div class="row margTop" text-center>
+		<div class="col">
+			<button ion-button icon-only class="boutRond" round outline color="indigo" large (tap)="getGeoloc()" >
 			 	<ion-icon name="pin"></ion-icon>  
 			</button>
 		</div>
-		<div class="col margTop">
-			<button ion-button icon-only class="boutRond" round outline color="secondary" large (tap)="changerDePage()" >
+		<div class="col">
+			<button ion-button icon-only class="boutRond" round outline color="indigo" large (tap)="changerDePage()" >
 			 	<ion-icon name="search"></ion-icon>  
 			</button>
 		</div>
 	</div>
   
 </ion-content>
-<ion-footer>
 
+<!--
+	<ion-footer>
 
-	<ion-toolbar>
-		<div class="row">
-			<div class="col " >
-				<button ion-button  margin round outline  color="gris" >
+		<ion-toolbar>
+			<div class="row">
+				<div class="col " >
+					<button ion-button  margin round outline  color="gris" >
 
-					<ion-icon class="boutonFooter" name="home"></ion-icon>
-				</button>
+						<ion-icon class="boutonFooter" name="home"></ion-icon>
+					</button>
+					</div>
+					<div class="col" >
+					<button ion-button margin float-right round outline  color="gris" (click)="changerDePage()" color="gris">
+						<ion-icon class="boutonFooter"  name="cloudy" ></ion-icon>
+					</button>
 				</div>
-				<div class="col" >
-				<button ion-button margin float-right round outline  color="gris" (click)="changerDePage()" color="gris">
-					<ion-icon class="boutonFooter"  name="cloudy" ></ion-icon>
-				</button>
 			</div>
-		</div>
-	</ion-toolbar>	
+		</ion-toolbar>	
 
-</ion-footer>
+	</ion-footer>   -->
